@@ -1,0 +1,139 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #fec7c7;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* For positioning the bubbles correctly */
+}
+
+.container {
+    text-align: center;
+    position: relative; /* Ensure container is above bubbles */
+    z-index: 1;
+}
+
+#username {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+}
+
+#searchBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color:#ff523b ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#searchBtn:hover {
+    background-color:#613030;
+}
+
+#profile {
+    color:black;
+    margin-top: 20px;
+    background:radial-gradient(#f1dfdf,#ffd6d6) ;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#profile.shake {
+    animation: shake 0.5s;
+}
+
+#profile-content {
+    text-align: left;
+}
+
+#avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.repos-languages {
+    margin-top: 10px;
+}
+
+.view-profile-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.view-profile-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Bubble Animation */
+#bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.github-icon {
+    position: absolute;
+    background-image: url('github\ \(1\).png'); /* Replace with the path to your GitHub logo */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    opacity: 0.7;
+    pointer-events: none;
+    animation: float 10s infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.5);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+}
